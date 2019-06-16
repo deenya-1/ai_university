@@ -5,18 +5,19 @@ class RealNumbers:
 
     def add(self, elem):
         self.arr.append(elem)
+        self.arr.sort()
 
     def remove(self, elem):
         self.arr.remove(elem)
 
     def remove_min(self):
-        self.arr.remove(min(self.arr))
+        del self.arr[0]
 
     def remove_max(self):
-        self.arr.remove(max(self.arr))
+        del self.arr[len(self.arr)-1]
 
 #Test
-numbers = RealNumbers([1,2,3, 4,5,6])
+numbers = RealNumbers([6,5,3,7,2,1])
 numbers.add(4)
 print(numbers.arr)
 numbers.remove(1)
